@@ -12,11 +12,11 @@ function Spaceship (name, crewArray, phasers, shields) {
   }
   this.phasersCharge = "uncharged"
 
-  // this.crew.forEach (this.crew.currentShip.bind(this)) {
-  //
-  // }
+  this.crew.forEach (function (CrewMember) {
+    CrewMember.currentShip = this
+  }, this)
 
-  for (var i = 0; i < this.crew.length; i++) {
-    this.crew[i].currentShip = this
-  }
+  // for (var i = 0; i < this.crew.length; i++) {
+  //   this.crew[i].currentShip = this
+  // }
 }
