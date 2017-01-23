@@ -1,18 +1,16 @@
 function CrewMember (position) {
   this.position = position
-  this.currentShip  = "Looking for a Rig"
-
 }
 
-// CrewMember.prototype.currentShip = function () {
-//   debugger
-//   if (this.currentShip === null) {
-//     return "Looking for a Rig"
-//   }
-//   else {
-//     return this.ship
-//   }
-// }
+CrewMember.prototype.currentShip = function () {
+
+  if (this.currentShip === null) {
+    return "Looking for a Rig"
+  }
+  else {
+    return this.currentShip
+  }
+}
 
 CrewMember.prototype.chargePhasers = function () {
   if (this.position === "Gunner" && this.currentShip !== "Looking for a Rig") {
