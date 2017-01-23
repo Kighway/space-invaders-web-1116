@@ -1,19 +1,10 @@
-// function CrewMember (position) {
-//   this.position = position
-//   this.currentShip  = "Looking for a Rig"
-// }                    !== "Looking for a Rig"
-
-
-
 function CrewMember (position) {
   this.position = position
-  this.currentShip = null
+  this.currentShip  = "Looking for a Rig"
 }
 
-
-
 CrewMember.prototype.chargePhasers = function () {
-  if (this.position === "Gunner" && this.currentShip) {
+  if (this.position === "Gunner" && this.currentShip !== "Looking for a Rig") {
     this.currentShip.phasersCharge = "charged!"
   }
   else {
@@ -22,7 +13,7 @@ CrewMember.prototype.chargePhasers = function () {
 }
 
 CrewMember.prototype.engageWarpDrive = function () {
-  if (this.position === "Pilot" && this.currentShip) {
+  if (this.position === "Pilot" && this.currentShip !== "Looking for a Rig") {
     this.currentShip.warpDrive = "engaged!"
   }
   else {
@@ -31,7 +22,7 @@ CrewMember.prototype.engageWarpDrive = function () {
 }
 
 CrewMember.prototype.setsInvisibility = function () {
-  if (this.position === "Defender" && this.currentShip) {
+  if (this.position === "Defender" && this.currentShip !== "Looking for a Rig") {
     this.currentShip.cloaked = true
   }
   else {
